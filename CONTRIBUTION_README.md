@@ -74,3 +74,49 @@ No maintainer feedback has been received yet.
 ### Status
 
 Awaiting review.
+
+---
+
+## Week 5 Update: Phase IV Submit & Iterate
+
+### Current PR
+
+Upstream PR: https://github.com/catboost/catboost/pull/3123
+
+Current status: Open and awaiting maintainer review.
+
+### What I Improved for Week 5
+
+For Week 5, I updated my pull request description to better match the project and program expectations. I added:
+
+- clearer issue context explaining why the wrong-type error message matters
+- `Closes #872`
+- an acceptance checklist
+- testing evidence
+- a note explaining that I attempted local testing but could not complete the targeted unit test run because the local Ninja target name was not found
+
+I also posted a polite maintainer-facing comment on the PR offering to adjust the test or wording based on CatBoost maintainer preferences.
+
+### Maintainer Feedback Log
+
+| Date | Feedback | My Response | Commit / Link |
+|---|---|---|---|
+| July 4, 2026 | No maintainer feedback received yet. | Updated the PR description, added testing evidence, and posted a maintainer-facing comment offering to revise the PR if needed. | https://github.com/catboost/catboost/pull/3123 |
+
+### Learnings & Reflections
+
+#### Technical Learning
+
+I learned how CatBoost parses JSON training options through `TJsonFieldHelper` and `TOption<T>`. I also learned how to add regression coverage in an existing C++ unit test file while following nearby test patterns.
+
+#### Open Source Process Learning
+
+I learned that upstream repositories can change while I am working. CatBoost's `master` branch changed, so I had to rebase, resolve a conflict, and create a clean PR branch that did not include my CodePath-only README. I also learned why a pull request should be scoped only to files relevant to the upstream project.
+
+#### What I Would Do Differently
+
+Next time, I would create a separate Contribution README repository from the beginning so graders can find it more easily. I would also update the PR description with a checklist, issue-closing keyword, and testing evidence before the first submission.
+
+### Phase II to Phase IV Consistency
+
+In Phase II, I planned to improve the JSON option parsing error path for issue #872. During Phase III and IV, upstream CatBoost already added the expected-type wording, so I adjusted my final contribution to add regression coverage that protects the behavior. The final PR is smaller than the original plan, but it still aligns with the issue because it verifies the expected error message for the reported wrong-type case.
